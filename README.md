@@ -10,7 +10,7 @@ A full-stack web application for managing sensors and their readings, built with
 
 ### Setup
 ```bash
-git clone <repository-url>
+git clone https://github.com/Emmyme/sensor-readings-app
 cd sensor-readings-app
 
 # Start everything

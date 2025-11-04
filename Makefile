@@ -1,4 +1,4 @@
-.PHONY: up migrate test seed
+.PHONY: up migrate test
 
 up: ## Build and run containers
 	docker-compose up -d --build
@@ -8,6 +8,3 @@ migrate: ## Run migrations
 
 test: ## Run tests
 	docker-compose exec backend python -m pytest
-
-seed: ## Create seed data
-	docker-compose exec backend python manage.py seed_data

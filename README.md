@@ -2,11 +2,41 @@
 
 A full-stack web application for managing sensors and their readings, built with Django Ninja (backend) and Next.js (frontend).
 
+### Dashboard
+![Dashboard](assets/dashboard.png)
+
+## Tech Stack
+
+### Backend
+- **Python 3.13**
+- **Django 5.1** - Web framework
+- **Django Ninja** - Fast, type-safe REST API framework
+- **PostgreSQL 15** - Database
+- **JWT** - Authentication
+- **Pytest** - Testing framework
+- **Pydantic** - Data validation
+
+### Frontend
+- **Next.js 15** - React framework
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - UI components
+
+### DevOps
+- **Docker** - Containerization
+- **Docker Compose** - Multi-container orchestration
+
+
+### Sensor List
+![Sensors](assets/sensors.png)
+
+### Sensor Details
+![Details](assets/details.png)
+
 ## How to Run Locally
 
 ### Prerequisites
 - Docker and Docker Compose
-- Make
 
 ### Setup
 ```bash
@@ -14,13 +44,10 @@ git clone <repository-url>
 cd sensor-readings-app
 
 # Start everything
-make up
+docker-compose up -d --build
 
 # Run migrations
-make migrate
-
-# Load sample data
-make seed
+docker-compose exec backend python manage.py migrate
 ```
 
 ### Access
@@ -28,14 +55,15 @@ make seed
 - **Backend API**: http://localhost:8000
 - **API Documentation**: http://localhost:8000/api/docs
 
-### Default Login
-- **Email**: `tester@example.com`
-- **Password**: `testpassword123`
+### Getting Started
+1. Register a new user at http://localhost:3000
+2. Login with your credentials
+3. Start creating sensors and adding readings!
 
 ## Run Tests
 
 ```bash
-make test
+docker-compose exec backend python -m pytest
 ```
 
 ## API Overview
